@@ -10,7 +10,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
+   html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -26,7 +26,7 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
+ ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -40,7 +40,7 @@ html {
  * A better looking default horizontal rule
  */
 
-hr {
+ hr {
     display: block;
     height: 1px;
     border: 0;
@@ -55,12 +55,12 @@ hr {
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+ audio,
+ canvas,
+ iframe,
+ img,
+ svg,
+ video {
     vertical-align: middle;
 }
 
@@ -68,7 +68,7 @@ video {
  * Remove default fieldset styles.
  */
 
-fieldset {
+ fieldset {
     border: 0;
     margin: 0;
     padding: 0;
@@ -78,7 +78,7 @@ fieldset {
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
+ textarea {
     resize: vertical;
 }
 
@@ -86,7 +86,7 @@ textarea {
    Browser Upgrade Prompt
    ========================================================================== */
 
-.browserupgrade {
+   .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
@@ -96,11 +96,11 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-input[type="button" i],
-input[type="submit" i],
-input[type="reset" i],
-input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
-    body{
+   input[type="button" i],
+   input[type="submit" i],
+   input[type="reset" i],
+   input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
+   body{
     margin: 0;
     padding: 0;
     position: relative;
@@ -142,14 +142,14 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
 .barell{
     position: absolute;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     left: 50%;
     width: 50px;
     height: 150px;
     background-color: #000;
     bottom: 0;
     -webkit-transform: rotate(20deg);
-            transform: rotate(20deg);
+    transform: rotate(20deg);
 }
 #duck{
     border-radius:50%;
@@ -157,12 +157,15 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
     height: 30px;
     position: absolute;
     left: 50%;
-    top: 50vh;
     background-color: greenyellow;
     border:none;
+    outline: none;
+
 }
 .dead{
     background-color: red;
+    outline: none;
+
 }
 
 #create{
@@ -195,7 +198,7 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
  * Hide visually and from screen readers
  */
 
-.hidden {
+ .hidden {
     display: none !important;
 }
 
@@ -208,7 +211,7 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
-.visuallyhidden {
+ .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(50%);
@@ -228,8 +231,8 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
  * https://www.drupal.org/node/897638
  */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
     clip: auto;
     -webkit-clip-path: none;
     clip-path: none;
@@ -245,7 +248,7 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
  * Hide visually and from screen readers, but maintain layout
  */
 
-.invisible {
+ .invisible {
     visibility: hidden;
 }
 
@@ -261,8 +264,8 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
-.clearfix:after {
+ .clearfix:before,
+ .clearfix:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
@@ -277,14 +280,14 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+   @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -294,7 +297,7 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-@media print {
+   @media print {
     *,
     :hover,
     *:focus,
@@ -302,9 +305,9 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
     *:after {
         background: transparent !important;
         color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+        http://www.sanbeiji.com/archives/953 */
         -webkit-box-shadow: none !important;
-                box-shadow: none !important;
+        box-shadow: none !important;
         text-shadow: none !important;
         cursor: crosshair !important;
 
@@ -328,8 +331,8 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
      * or use the `javascript:` pseudo protocol
      */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+     a[href^="#"]:after,
+     a[href^="javascript:"]:after {
         content: "";
     }
 
@@ -347,7 +350,7 @@ input[type="file" i]::-webkit-file-upload-button, button { cursor: crosshair;}
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
 
-    thead {
+     thead {
         display: table-header-group;
     }
 

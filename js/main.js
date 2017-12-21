@@ -4,9 +4,8 @@
         minViewWidth = 500,
         ViewHeight = document.body.clientHeight,
         duck = document.getElementById('duck');
+        aaa = document.querySelector('.sun');
         
-
-    console.log(ViewWidth);
 
     function DuckObject(x,y){
             var that = this;
@@ -17,39 +16,48 @@
             this.file = 'img/duck.svg';
             this.scale = 0.5;
             this.fly = function(i){
-                    that.y += 1;
-                    that.objct.style.top = that.y;
-                    // console.log(that.y);
-                    // console.log(that.objct.style.top);
-            };
-           
-            
+                            var topPos = document.documentElement.clientHeight;
+                            setInterval(function(){
+                                that.y += 1;
+                                 that.objct.style.bottom = that.y +"px";
+                               console.log(that.objct.style.bottom);
+                            },5)
+                         };
+
+
+      //       this.fly = function() {
+      //         var elem = this.objct.id;
+      //         var pos = this.y;
+      //         var id = setInterval(frame, 5);
+      //         function frame() {
+      //           if (pos == 350) {
+      //             clearInterval(id);
+      //         } else {
+      //             pos++; 
+      //             elem.style.top = pos + 'px'; 
+      //             elem.style.left = pos + 'px'; 
+      //         }
+      //     }
+      // }
+
             this.create = function(i){
                  this.objct.id = this.id;
                  document.body.appendChild(this.objct);
                  this.objct = document.getElementById(this.id);
-                 // console.log("done");
-                 this.objct.style.left = 100;
-                 console.log(this.objct);
-                  setInterval(function(){
-                   that.fly();
-                  },100)
-
-                 // console.log(that.style.top);
 
                  this.objct.onclick = function(e){
+                    e.preventDefault();
                     var item = e.target;
                     item.className = "dead";
                     item.style.backgroundColor = "red";
                     console.log(item);
-                    e.preventDefault();
                     setTimeout(
                         function(){
                             that.die();
                         },1000);
                 }
 
-
+               this.fly();
 
             };
 
@@ -60,14 +68,16 @@
 
             this.die = function(){
               this.objct.remove();
+              clearInterval(this.fly);
             }
 
-            
     };
 
     create.onclick = function debug(msg) {
         var randPointX = Math.floor(Math.random() * (ViewWidth - minViewWidth) + minViewWidth);
         var duckObj = new DuckObject(randPointX,200);
     }
+
+
 
 }());
