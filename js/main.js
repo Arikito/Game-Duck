@@ -12,15 +12,43 @@
             this.id = "duck";
             this.x = x;
             this.y = y;
+            this.spedDX = 1;
+            this.spedDY = 1;
             this.y = this.y;
             this.file = 'img/duck.svg';
             this.scale = 0.5;
             this.fly = function(i){
                             var topPos = document.documentElement.clientHeight;
                             setInterval(function(){
-                                that.y += 1;
-                                 that.objct.style.bottom = that.y +"px";
-                               console.log(that.objct.style.bottom);
+
+                            if (that.y == (window.innerHeight - 47) && that.spedDY > 0) {
+                                that.spedDY = -1;
+                                console.log(that.objct.style.bottom + 'right');
+                            // console.log(window.innerWidth);
+
+                            } else if(that.y ==  0 && that.spedDY < 0){
+                            that.spedDY = 1;
+                            // console.log(window.innerWidth);
+                            console.log(that.objct.style.bottom + 'left');
+                            }
+                            that.y += that.spedDY;
+                            that.objct.style.bottom = that.y +"px";
+
+
+                            if (that.x == (window.innerWidth - 47) && that.spedDX > 0) {
+                            that.spedDX = -1;
+                            console.log(that.objct.style.left + 'right');
+                             // console.log(window.innerWidth);
+                             
+                            } else if(that.x ==  0 && that.spedDX < 0){
+                            that.spedDX = 1;
+                             // console.log(window.innerWidth);
+                             console.log(that.objct.style.left + 'left');
+                            }
+                            that.x += that.spedDX;
+                            that.objct.style.left = that.x +"px";
+
+
                             },5)
                          };
 
