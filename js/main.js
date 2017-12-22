@@ -1,7 +1,7 @@
 (function(){
     "use srtict"
     var ViewWidth = document.body.clientWidth,
-        minViewWidth = 500,
+        minViewWidth = 300,
         ViewHeight = document.body.clientHeight,
         duck = document.getElementById('duck');
         aaa = document.querySelector('.sun');
@@ -21,15 +21,12 @@
                             var topPos = document.documentElement.clientHeight;
                             setInterval(function(){
 
-                            if (that.y == (window.innerHeight - 47) && that.spedDY > 0) {
+                            if (that.y == (window.innerHeight - 30) && that.spedDY > 0) {
                                 that.spedDY = -1;
                                 console.log(that.objct.style.bottom + 'right');
-                            // console.log(window.innerWidth);
 
                             } else if(that.y ==  0 && that.spedDY < 0){
                             that.spedDY = 1;
-                            // console.log(window.innerWidth);
-                            console.log(that.objct.style.bottom + 'left');
                             }
                             that.y += that.spedDY;
                             that.objct.style.bottom = that.y +"px";
@@ -37,13 +34,9 @@
 
                             if (that.x == (window.innerWidth - 47) && that.spedDX > 0) {
                             that.spedDX = -1;
-                            console.log(that.objct.style.left + 'right');
-                             // console.log(window.innerWidth);
                              
                             } else if(that.x ==  0 && that.spedDX < 0){
                             that.spedDX = 1;
-                             // console.log(window.innerWidth);
-                             console.log(that.objct.style.left + 'left');
                             }
                             that.x += that.spedDX;
                             that.objct.style.left = that.x +"px";
@@ -52,21 +45,6 @@
                             },5)
                          };
 
-
-      //       this.fly = function() {
-      //         var elem = this.objct.id;
-      //         var pos = this.y;
-      //         var id = setInterval(frame, 5);
-      //         function frame() {
-      //           if (pos == 350) {
-      //             clearInterval(id);
-      //         } else {
-      //             pos++; 
-      //             elem.style.top = pos + 'px'; 
-      //             elem.style.left = pos + 'px'; 
-      //         }
-      //     }
-      // }
 
             this.create = function(i){
                  this.objct.id = this.id;
