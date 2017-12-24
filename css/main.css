@@ -156,41 +156,208 @@ html {
 	-webkit-transform: rotate(20deg);
 	transform: rotate(20deg);
 }
-#duck{
-	border-radius:50%;
-	width:30px;
-	height: 30px;
-	position: absolute;
-	background-color: greenyellow;
-	border:none;
-	outline: none;
-
-}
 .dead{
 	background-color: red;
 	outline: none;
 
 }
 
-#create{
-	background-color: red;
-	border-radius: none;
-	border: none;
-	position: relative;
-	top: 500px;
-	left: 50px;
-	height: 40px;
-	width: 100px;
-	outline: none;
+
+@font-face {
+	font-family: 'PressStart2P'; /* Имя шрифта */
+	src: url(../fonts/PressStart2P.ttf); /* Путь к файлу со шрифтом */
 }
 
+/* Custom styles */
+	body {
+		overflow: hidden;
+		font-family: 'PressStart2P', sans-serif;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+	}
+	.barell {
+		display: none;
+	}
+	#startScreen {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: #000;
+		z-index: 1000000;
+	}
+	#startScreen #start {
+		position: fixed;
+		background-color: #000;
+		color: #fff;
+		text-transform: uppercase;
+		border: 2px solid #fff;
+		font-family: 'PressStart2P', sans-serif;
+		border-radius: 5px;
+		cursor: pointer;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10000;
+		padding: .5em 1em;
+		outline: none;
+	}
+	#startScreen #start:hover {
+		color: #84d100;
+		border: 2px solid #84d100;
+	}
+	#startScreen #start:active {
+		color: #f00;
+	}
+	/* Duck */
+		#duck{
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			background-color: #fff;
+			border: 1px solid #000;
+			outline: none;
 
-
-
-
-
-
-
+		}
+	/* Background nature */
+		.sun {
+			display: none;
+		}
+		.sky {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			z-index: -10;
+			background-color: #63b4ff;
+		}
+		.sky.red {
+			background-color: #ff9b9b;
+		}
+		.bush {
+			position: fixed;
+			height: 136px;
+			width: 128px;
+			right: 25%;
+			bottom: 200px;
+			background: transparent;
+			background-image: url(../img/bush2.png);
+			background-repeat: no-repeat;
+			z-index: 100;
+		}
+		.grass {
+			position: fixed;
+			height: 100px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			bottom: 140px;
+			background: transparent;
+			background-image: url(../img/grass2.png);
+			z-index: 110;
+		}
+		.mud {
+			position: fixed;
+			height: 150px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #8a6e00;
+			background-image: url(../img/mud2.png);
+			background-repeat: repeat-x;
+			z-index: 90;
+		}
+	/* Bottom UI styles */
+	#ui {
+		position: fixed;
+		font-family: 'PressStart2P', sans-serif;
+		z-index: 10000;
+	}
+	#ui .block {
+		background-color: #000;
+		color: #fff;
+		position: fixed;
+		height: 40px;
+		bottom: 20px;
+		border: 2px solid #84d100;
+		border-radius: 5px;
+		padding: 5px;
+	}
+	#ui .block .text {
+		text-transform: uppercase;
+	}
+	#ui .shot {
+		left: 40px;
+	}
+	#ui .shot .bullets {
+		height: 20px;
+		font-size: 0;
+	}
+	#ui .shot .bullets .bullet {
+		display: inline-block;
+		width: calc(100% / 3);
+		height: 18px;
+		background: transparent;
+		background-image: url(../img/bullet.png);
+		background-repeat: no-repeat;
+		-webkit-background-size: contain;
+		background-size: contain;
+		background-position: center;
+	}
+	#ui .shot .lifes {
+		position: absolute;
+		bottom: calc(100% + 20px);
+		background-color: #000;
+		white-space: nowrap;
+		left: 50%;
+		padding: 0 5px;
+		transform: translateX(-50%);
+		color: #84d100;
+	}
+	#ui .shot .text {
+		color: #60b8f8;
+	}
+	#ui .hit {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	#ui .hit .text {
+		color: #84d100;
+	}
+	#ui .hit .ducks {
+		width: 300px;
+	}
+	#ui .score {
+		right: 40px;
+		width: 130px;
+		text-align: right;
+	}
+	/* Game Over */
+	#gameOver {
+		display: none;
+		position: fixed;
+		background-color: #000;
+		color: #fff;
+		text-transform: uppercase;
+		border: 2px solid #fff;
+		font-family: 'PressStart2P', sans-serif;
+		border-radius: 5px;
+		cursor: pointer;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10000;
+		padding: .5em 1em;
+		outline: none;
+	}
 
 
 
@@ -375,85 +542,3 @@ html {
 		page-break-after: avoid;
 	}
 }
-
-@font-face {
-	font-family: 'PressStart2P'; /* Имя шрифта */
-	src: url(../fonts/PressStart2P.ttf); /* Путь к файлу со шрифтом */
-}
-
-/* Custom styles */
-	body {
-		overflow: hidden;
-		font-family: 'PressStart2P', sans-serif;
-	}
-	.barell {
-		display: none;
-	}
-
-	#create {
-		background-color: #000;
-		color: #fff;
-		text-transform: uppercase;
-		border: 2px solid #84d100;
-		font-family: 'PressStart2P', sans-serif;
-		border-radius: 5px;
-		cursor: pointer;
-	}
-	#create:hover {
-		color: #84d100;
-	}
-	#create:active {
-		color: #f00;
-	}
-	/* Bottom UI styles */
-	#ui {
-		/*position: fixed;*/
-		font-family: 'PressStart2P', sans-serif;
-	}
-	#ui .block {
-		background-color: #000;
-		color: #fff;
-		position: fixed;
-		height: 40px;
-		bottom: 20px;
-		border: 2px solid #84d100;
-		border-radius: 5px;
-		padding: 5px;
-	}
-	#ui .block .text {
-		text-transform: uppercase;
-	}
-	#ui .shot {
-		left: 40px;
-	}
-	#ui .shot .bullets {
-		height: 20px;
-	}
-	#ui .shot .round {
-		position: absolute;
-		bottom: calc(100% + 20px);
-		background-color: #000;
-		white-space: nowrap;
-		left: 50%;
-		padding: 0 5px;
-		transform: translateX(-50%);
-		color: #84d100;
-	}
-	#ui .shot .text {
-		color: #60b8f8;
-	}
-	#ui .hit {
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	#ui .hit .text {
-		color: #84d100;
-	}
-	#ui .hit .ducks {
-		width: 300px;
-	}
-	#ui .score {
-		right: 40px;
-		width: 130px;
-		text-align: right;
-	}
