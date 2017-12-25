@@ -1,5 +1,5 @@
 ;(function(){
-	"use srtict"
+	"use srtict";
 	var totalScore = 0,
 		bullets = 3,
 		duckSize = 0;
@@ -62,7 +62,7 @@
 				that.objct.remove();
 				game.init();
 			}, 1000);
-		}
+		};
 		this.create = function(){
 			this.objct.id = this.id;
 			document.body.appendChild(this.objct);
@@ -75,8 +75,8 @@
 		if(!(this.objct = document.getElementById(this.id))){
 			this.objct = document.createElement("button");
 			this.create();
-		};
-	};
+		}
+	}
 	function DuckHunt(){
 		var that = this;
 		this.play = false;
@@ -90,7 +90,7 @@
 				ui.querySelector('.shot .bullets').appendChild(bullet);
 			}
 			this.bullets = ui.querySelector('.shot .bullets').getElementsByClassName('bullet');
-		}
+		};
 		this.init = function(){
 			this.play = true;
 			this.reloadBullets(3);
@@ -123,17 +123,17 @@
 								}
 							}
 						}
-					}
+					};
 				}
 			}, 100);
 		};
 		this.over = function(){
 			this.play = false;
 			gameOver.style.display = 'block';
-		}
-	};
+		};
+	}
 	var game = new DuckHunt();
-	
+
 	start.onclick = function(){
 		startScreen.style.display = 'none';
 		game.init();
