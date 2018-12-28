@@ -20,7 +20,7 @@
 		this.id = 'duck';
 		this.x = x;
 		this.y = y;
-		var speeds = [-1, 1];
+		var speeds = [-3, 2];
 		this.speedX = speeds[Math.floor(Math.random() * speeds.length)];
 		this.speedY = -1;
 		this.y = this.y;
